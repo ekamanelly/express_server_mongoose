@@ -3,7 +3,7 @@
 > ## 👀 Overview
 
 A nodejs server with express middleware. Although I would have love to use Nestjs framework, which would have been much more easier to build clean-structured code.
-
+#add your mongodb connection string (here)[/src/app.ts]
 #you can make you these commands
 
 Start server `npm run start` or `yarn start` 
