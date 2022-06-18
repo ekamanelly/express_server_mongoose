@@ -6,6 +6,8 @@ A nodejs server with express middleware. Although I would have love to use Nestj
 
 #please add your mongodb connection string [here](https://github.com/ekamanelly/express_server_mongodb/blob/master/src/index.ts)
 
+
+
 #you can make you these commands
 
 Start server `npm run start` or `yarn start` 
@@ -20,6 +22,13 @@ I used redis to cache api request with the tag as keys. so, we get stored date o
 
 on mac or linux `sudo apt-get install redis`
 start redis-server `sudo redis-server`
+
+
+#quick pick at
+  router inversion [here](https://github.com/ekamanelly/express_server_mongodb/blob/master/src/question/quetion.route.ts)
+  
+   
+  router inversion [here](https://github.com/ekamanelly/express_server_mongodb/blob/master/src/question/question.serviceAdaptor.ts) 
 
 
 So I think that all 
