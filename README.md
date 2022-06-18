@@ -28,7 +28,7 @@ start redis-server `sudo redis-server`
   router inversion [here](https://github.com/ekamanelly/express_server_mongodb/blob/master/src/question/quetion.route.ts)
   
    
-  router inversion [here](https://github.com/ekamanelly/express_server_mongodb/blob/master/src/question/question.serviceAdaptor.ts) 
+  service inversion [here](https://github.com/ekamanelly/express_server_mongodb/blob/master/src/question/question.serviceAdaptor.ts) 
 
 
 So I think that all 
