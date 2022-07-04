@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   print_hello:
     docker:
-    - image: cimg/node:18.4.0
+      - image: cimg/node:18.4.0
     steps:
       - run: echo 'hollo'
 
