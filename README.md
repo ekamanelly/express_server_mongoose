@@ -5,16 +5,16 @@
  An express server with complete inversion control
 
  - 98% test coverage with advance stubbing.
- - Reduce latency with redis in memory storage 
+ - Reduce latency with redis in memory storage from 1037 ms to 28 ms
  - Readable code structured 
- - Rontainerized application 
+ - Containerized application 
  - Automate test and build with Travis ci
 
 ![97% test coverage](/coverage.png)/coverage.png
 
 
 
-# you can make use these commands
+# you can use this commands
 
 - with `docker-compose up` you spin up the mongo, redis and app container. 
 - Start server `npm run start` or `yarn start` 
