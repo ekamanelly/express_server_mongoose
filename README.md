@@ -34,6 +34,7 @@ start redis-server `sudo redis-server`
   service inversion [here](https://github.com/ekamanelly/express_server_mongodb/blob/master/src/question/question.serviceAdaptor.ts) 
 
 
-[97% test coverage](/coverage.png)
+![97% test coverage](/coverage.png)
+<img src="/coverage.png" width="128"/>
 
 So I think that all 
