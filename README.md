@@ -2,13 +2,21 @@
 
 > ## 👀 Overview
 
-A nodejs server with express middleware. Although I would have love to use Nestjs framework, which would have been much more easier to build clean-structured code.
+ An express server with complete inversion control
 
-with `docker-compose up` you spin up the mongo, redis and app container. 
+ - 98% test coverage with advance stubbing.
+ - Reduce latency with redis in memory storage from 1037 ms to 28 ms
+ - Readable code structured 
+ - Containerized application 
+ - Automate test and build with Travis ci
+
+![97% test coverage](/coverage.png)/coverage.png
 
 
-# you can make use these commands
 
+# you can use this commands
+
+- with `docker-compose up` you spin up the mongo, redis and app container. 
 - Start server `npm run start` or `yarn start` 
 - Start  development server `npm run dev` or `yarn dev`
 - Install dependency `npm install` or `yarn install`
@@ -17,10 +25,7 @@ with `docker-compose up` you spin up the mongo, redis and app container.
 - post is `9000`
 
 
-
-
- Implement redis to cache api request with the tag as keys. so, we get stored data on successive request with same key. The data expires 3600s (1hour). 
- you might need to install it on you machine 
+other commands 
 
 on mac or linux `sudo apt-get install redis`
 start redis-server `sudo redis-server`
@@ -34,6 +39,14 @@ start redis-server `sudo redis-server`
   service inversion [here](https://github.com/ekamanelly/express_server_mongodb/blob/master/src/question/question.serviceAdaptor.ts) 
 
 
-[97% test coverage](coverage.png)
+
+## endpoint 
+http://localhosh:9000/api/questions/{:id}
+
+- post `{test:'just a question'}`
+- get 
+- patch
+- delete 
+
 
 So I think that all 
