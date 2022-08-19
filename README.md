@@ -43,7 +43,7 @@ start redis-server `sudo redis-server`
 ## endpoint 
 http://localhosh:9000/api/questions/{:id}
 
-- post `{test:'just a question'}`
+- post `{text:'just a question'}`
 - get 
 - patch
 - delete 
