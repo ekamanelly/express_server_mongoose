@@ -1,0 +1,17 @@
+# This workflow will install will install app dependencies and run unit test
+# Then test coverage has a benchmark of 98% 
+# notify on slack
+
+name: dockerize app
+
+on:
+  push:
+    branches: ["test/workflow"]
+  # pull_request:
+  #
+jobs:
+  utest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v3  

@@ -2,9 +2,9 @@
 
 # This workflow will install will install app dependencies and run unit test
 # Then test coverage has a benchmark of 98% 
-# notify onslac
+# notify on slack
 
-name: unit test and conerage
+name: unit test and coverage
 
 on:
   push:
@@ -23,7 +23,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: cd app
+      - run: cd app && ll -al
+      
       # - run: echo ''
       - run: npm install 
       - run: npm run build 
