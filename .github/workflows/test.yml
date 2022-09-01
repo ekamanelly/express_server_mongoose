@@ -24,10 +24,50 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}   
       - run: |
-         pwd
+         pwd 
          ls -al
          cd app
          npm install 
          npm run build 
-         npm run testcoverage
+         npm run test:coverage
+         unit-test:
+
+  merge_staging:       
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v3
+
+      - name: Use docker ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}  
+          # create docker images/container 
+          # get access to docker account 
+          # push the image or container to docker  
+      # - run: |
+      #    pwd 
+      #    ls -al
+      #    docker run emmanuelekama/node-web-app:0.0.01
+      #    docker ps
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}   
+         
+      - name: Build image and push to Docker Hub and GitHub Container Registry
+        uses: docker/build-push-action@v2
+        with:
+          # relative path to the place where source code with Dockerfile is located
+          context: app/
+          # Note: tags has to be all lower-case
+          tags: |
+           emmanuelekama/node-web-app:0.0.01
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}        
+        
+        
+
        

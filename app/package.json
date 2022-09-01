@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "testcoverage": "jest --coverage",
+    "test:coverage": "jest --coverage",
     "build": "npx tsc",
     "start": "concurrently \"npx tsc\" \"node dist/index.js\"",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
