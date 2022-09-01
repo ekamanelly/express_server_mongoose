@@ -1,4 +1,4 @@
-#!/bin/dash
+git 
 echo "please, what the resource name ?"
 read res
 

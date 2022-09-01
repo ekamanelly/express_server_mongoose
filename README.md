@@ -24,7 +24,7 @@
 - run test coverage `npm run test:cov` or `yarn test:cov`
 - post is `9000`
 
-
+<!-- commities kkmkm  -->
 other commands 
 
 on mac or linux `sudo apt-get install redis`
