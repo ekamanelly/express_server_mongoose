@@ -25,8 +25,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: ls
       
-      # - run: echo ''
-      # - run: npm install 
-      # - run: npm run build 
-      # - run: npm test
+      - run: cd /app
+      - run: npm install 
+      - run: npm run build 
+      - run: npm test
        
