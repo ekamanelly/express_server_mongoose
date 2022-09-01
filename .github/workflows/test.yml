@@ -1,0 +1,31 @@
+
+
+# This workflow will install will install app dependencies and run unit test
+# Then test coverage has a benchmark of 98% 
+# notify onslac
+
+name: unit test and conerage
+
+on:
+  push:
+    branches: ["test/workflow"]
+  # pull_request:
+  #   branches: ["master"]
+
+jobs:
+  utest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: cd app
+      # - run: echo ''
+      - run: npm install 
+      - run: npm run build 
+      - run: npm test
+       
