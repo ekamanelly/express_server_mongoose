@@ -11,7 +11,7 @@ if [ -z "$githubBranch" ] || [ -z "$githubBrach"]
            sudo git  add .
 
             sudo git commit -m "$githubMessage"
-            sudo git push origin  "$githubBrach"
+            sudo git push origin  "$githubBranch"
 
 
 
