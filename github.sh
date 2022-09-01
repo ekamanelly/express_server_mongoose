@@ -6,7 +6,10 @@ echo "github banch ?"
 read githubBranch 
 
 if [ -z "$githubBranch" ] || [ -z "$githubBrach"] 
-     then   sudo git  add .
+     then   
+          echo "$githubBranch"
+           sudo git  add .
+
             sudo git commit -m "$githubMessage"
             sudo git push origin  "$githubBrach"
 
