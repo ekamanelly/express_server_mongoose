@@ -13,7 +13,7 @@ on:
   #   branches: ["master"]
 
 jobs:
-  utest:
+  unit-test:
     runs-on: ubuntu-latest
     steps:
       - name: Setup repo
@@ -23,10 +23,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: cd app && ll -al
+      - run: ll -al
       
       # - run: echo ''
-      - run: npm install 
-      - run: npm run build 
-      - run: npm test
+      # - run: npm install 
+      # - run: npm run build 
+      # - run: npm test
        
