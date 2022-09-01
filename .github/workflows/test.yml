@@ -65,9 +65,16 @@ jobs:
           # Note: tags has to be all lower-case
           tags: |
            emmanuelekama/node-web-app:0.0.01
+          with:
+          push: true 
           # build on feature branches, push only on main branch
-          push: ${{ github.ref == 'refs/heads/main' }}        
+          # push: ${{ github.ref == 'refs/heads/main' }}   
+
         
-        
+      # - name: Push Docker image to Container Registry
+      #   with:
+      #     push: true
+      #     # tags: user/app:latest
+                  
 
        
