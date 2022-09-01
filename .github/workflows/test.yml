@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: ll -al
+      - run: ls
       
       # - run: echo ''
       # - run: npm install 
