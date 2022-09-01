@@ -49,7 +49,7 @@ jobs:
       #    pwd 
       #    ls -al
       #    docker run emmanuelekama/node-web-app:0.0.01
-      #    docker ps
+        #  docker pssdvs
 
       - name: Login to DockerHub
         uses: docker/login-action@v2
