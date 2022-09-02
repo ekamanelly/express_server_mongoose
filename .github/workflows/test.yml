@@ -46,15 +46,16 @@ jobs:
 
 
       - name: Commit report
+        run: echo ${{ github.head_ref }}
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.PAT }}
           committer: 'ekama'
-          base: ${{ github.head_ref }}
+          base: test/workflow
           commit-message: autopep8 action fixes
           title: Fixes by autopep8 action
           author: uloho 
-          # branch: master
+          branch: erorr
           body: |
             'test body pr'
         # run: |
