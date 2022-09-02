@@ -30,7 +30,6 @@ jobs:
          npm install 
          npm run build 
          npm run test:coverage
-         unit-test:
 
   Push-to-docker: 
     needs: unit-test     
