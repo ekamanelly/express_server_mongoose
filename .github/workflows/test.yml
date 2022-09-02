@@ -72,7 +72,8 @@ jobs:
         # run: |
         #   echo ${{ github.head_ref }}
         uses: peter-evans/create-pull-request@v3
-        run: echo "${{ env.GIT_COMMIT_COMMITTER_NAME }} ${{ env.GIT_COMMIT_COMMITTER_EMAIL }}" 
+        run: |
+          echo "${{ env.GIT_COMMIT_COMMITTER_NAME }} ${{ env.GIT_COMMIT_COMMITTER_EMAIL }}" 
         with:
           token: ${{ secrets.GITHUB_TOKEN}}
           committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }}"
