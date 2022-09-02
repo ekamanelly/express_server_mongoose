@@ -55,7 +55,7 @@ jobs:
            emmanuelekama/node-web-app:0.0.01
           with:
           push: true 
-  make_to_main_branch:
+  push-branch:
       needs: unit-test     
       runs-on: ubuntu-latest
       steps:
