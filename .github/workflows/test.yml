@@ -55,13 +55,23 @@ jobs:
            emmanuelekama/node-web-app:0.0.01
           with:
           push: true 
+        
+          # push: ${{ github.ref == 'refs/heads/circleci-project-setup' }} 
   push-branch:
-      needs: unit-test     
-      runs-on: ubuntu-latest
-      steps:
+    needs: unit-test     
+    runs-on: ubuntu-latest
+    steps:
       - name: Setup repo
         uses: actions/checkout@v3
-      - name:  
+      - name: push master
+      - name: Build image and push to Docker Hub and GitHub Container Registry
+        uses: docker/build-push-action@v2
+        with:
+          # relative path to the place where source code with Dockerfile is located
+          # context: .
+
+          # build on feature branches, push only on main branch
+          # push: ${{ github.ref == 'refs/heads/main' }}     
           push: ${{ github.ref == 'refs/heads/circleci-project-setup' }}  
 
       
