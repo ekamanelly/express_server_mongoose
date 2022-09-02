@@ -72,13 +72,14 @@ jobs:
         # run: |
         #   echo ${{ github.head_ref }}
         uses: peter-evans/create-pull-request@v3
+        run: echo "${{ env.GIT_COMMIT_COMMITTER_NAME }} ${{ env.GIT_COMMIT_COMMITTER_EMAIL }}" 
         with:
           token: ${{ secrets.GITHUB_TOKEN}}
           committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }}"
           base: test/workflow
           commit-message: autopep8 action fixes
           title: Fixes by autopep8 action
-          author: ${{ env.GIT_COMMIT_COMMITTER_EMAIL }}" 
+          author: "${{ env.GIT_COMMIT_COMMITTER_NAME }} ${{ env.GIT_COMMIT_COMMITTER_EMAIL }}" 
           branch: erorr
           body: |
             'test body pr'
