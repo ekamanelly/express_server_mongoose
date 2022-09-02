@@ -13,27 +13,27 @@ on:
   #   branches: ["master"]
 
 jobs:
-  unit-test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup repo
-        uses: actions/checkout@v3
+  # unit-test:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Setup repo
+  #       uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}   
-      - run: |
-         pwd 
-         ls -al
-         cd app
-         npm install 
-         npm run build 
-         npm run test:coverage
+  #     - name: Use Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: ${{ matrix.node-version }}   
+  #     - run: |
+  #        pwd 
+  #        ls -al
+  #        cd app
+  #        npm install 
+  #        npm run build 
+  #        npm run test:coverage
 
  
   merge_to_master:
-    needs: unit-test     
+    # needs: unit-test     
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -73,7 +73,7 @@ jobs:
         #   echo ${{ github.head_ref }}
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.GITHUB_TOKEN}}
           committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }}"
           base: test/workflow
           commit-message: autopep8 action fixes
