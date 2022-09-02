@@ -60,10 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup repo
-        uses: actions/checkout@v3
-
-      - name: Login to DockerHub
-        uses: docker/login-action@v2  
+        uses: actions/checkout@v3 
 
       -  name: Build image and push to Docker Hub Container Registry
          uses: docker/build-push-action@v2
