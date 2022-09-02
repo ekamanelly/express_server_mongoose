@@ -46,7 +46,8 @@ jobs:
 
 
       - name: Commit report
-        run: echo ${{ github.head_ref }}
+        run: |
+          echo ${{ github.head_ref }}
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.PAT }}
