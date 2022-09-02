@@ -32,7 +32,8 @@ jobs:
          npm run test:coverage
          unit-test:
 
-  merge_staging:       
+  merge_staging: 
+    needs: unit-test     
     runs-on: ubuntu-latest
     steps:
       - name: Setup repo
