@@ -78,7 +78,7 @@ jobs:
           base: test/workflow
           commit-message: autopep8 action fixes
           title: Fixes by autopep8 action
-          author: uloho 
+          author: ${{ env.GIT_COMMIT_COMMITTER_EMAIL }}" 
           branch: erorr
           body: |
             'test body pr'
