@@ -36,9 +36,18 @@ jobs:
     needs: unit-test     
     runs-on: ubuntu-latest
     steps:
-      - name: Setup repo
-        uses: actions/checkout@v3 
-      - run: sudo git branch 
+      - uses: actions/checkout@v1
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Create report file
+        run: date +%s > report.txt
+      - name: Commit report
+        run: |
+          git config --global user.name 'ekamanelly'
+          git config --global user.email 'ekamanelly'@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/master
+          git commit -am "Automated report"
+          git push
 
       # -  name: Build image and push to Docker Hub Container Registry
       #    uses: docker/build-push-action@v2
