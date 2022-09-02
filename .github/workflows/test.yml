@@ -76,14 +76,14 @@ jobs:
         #   echo "${{ env.GIT_COMMIT_COMMITTER_NAME }} ${{ env.GIT_COMMIT_COMMITTER_EMAIL }}" 
         with:
           token: ${{ secrets.GITHUB_TOKEN}}
-          committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }}"
+          committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>
           base: test/workflow
           commit-message: autopep8 action fixes
-          title: Fixes by autopep8 action
-          author: ${{ env.GIT_COMMIT_AUTHOR }}"
-          branch: erorr
+          title: "Fixes by autopep8 action"
+          author: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>
+          branch: "erorr"
           body: |
-            'test body pr'
+            "test body pr"
         # run: |
         #   git config --global user.name ekamanelly
         #   git config --global user.email ekamanelly@users.noreply.github.com
