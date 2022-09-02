@@ -47,6 +47,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           committer: 'ekama'
+          base: ${{ github.head_ref }}
           author: uloho 
           branch: master
           body: |
