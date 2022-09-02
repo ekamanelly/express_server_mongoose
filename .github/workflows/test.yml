@@ -41,15 +41,20 @@ jobs:
           ref: ${{ github.head_ref }}
       - name: Create report file
         run: date +%s > report.txt
+
+
+
+
       - name: Commit report
         uses: peter-evans/create-pull-request@v4
-                # uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.PAT }}
           committer: 'ekama'
           base: ${{ github.head_ref }}
+          commit-message: autopep8 action fixes
+          title: Fixes by autopep8 action
           author: uloho 
-          branch: master
+          # branch: master
           body: |
             'test body pr'
         # run: |
