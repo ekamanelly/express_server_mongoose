@@ -5,10 +5,10 @@
 name: dockerize app
 
 on:
-  push:
+  # push:
+  #   branches: ["test/workflow"]
+  pull_request:
     branches: ["master"]
-  # pull_request:
-  #
 jobs:
   Push-to-docker: 
     needs: unit-test     

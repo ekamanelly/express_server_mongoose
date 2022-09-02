@@ -13,27 +13,27 @@ on:
   #   branches: ["master"]
 
 jobs:
-  # unit-test:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Setup repo
-  #       uses: actions/checkout@v3
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v3
 
-  #     - name: Use Node.js ${{ matrix.node-version }}
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: ${{ matrix.node-version }}   
-  #     - run: |
-  #        pwd 
-  #        ls -al
-  #        cd app
-  #        npm install 
-  #        npm run build 
-  #        npm run test:coverage
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}   
+      - run: |
+         pwd 
+         ls -al
+         cd app
+         npm install 
+         npm run build 
+         npm run test:coverage
 
  
   merge_to_master:
-    # needs: unit-test     
+    needs: unit-test     
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -69,36 +69,18 @@ jobs:
 
 
       - name: Commit report
-        # run: |
-        #   echo ${{ github.head_ref }}
         uses: peter-evans/create-pull-request@v3
-        # run: |
-        #   echo "${{ env.GIT_COMMIT_COMMITTER_NAME }} ${{ env.GIT_COMMIT_COMMITTER_EMAIL }}" 
         with:
           token: ${{ secrets.GITHUB_TOKEN}}
           committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>
           base: test/workflow
           commit-message: autopep8 action fixes
-          title: "Fixes by autopep8 action"
+          title: ${{ env.GIT_COMMIT_MESSAGE_SUBJECT_SANITIZED }}
           author: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>
-          branch: "erorr"
+          branch: ${{ env.GIT_COMMIT_COMMITTER_NAME }}/${{ env.GIT_COMMIT_MESSAGE_SUBJECT_SANITIZED }}
           body: |
-            "test body pr"
-        # run: |
-        #   git config --global user.name ekamanelly
-        #   git config --global user.email ekamanelly@users.noreply.github.com
-        #   git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-        #   git push origin master
-
-      # -  name: Build image and push to Docker Hub Container Registry
-      #    uses: docker/build-push-action@v2
-      #    with:
-      #     push: ${{ github.ref == 'refs/heads/circleci-project-setup' }}
-      #     # relative path to the place where source code with Dockerfile is located
-      #     # context: app/
-      #     # # Note: tags has to be all lower-case
-      #     # tags: |
-      #     #  emmanuelekama/node-web-app:0.0.01
+            ${{ env.GIT_COMMIT_MESSAGE_SUBJECT }}
+            place add more details
               
 
                   
