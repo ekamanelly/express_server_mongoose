@@ -38,10 +38,7 @@ jobs:
     steps:
       - name: Setup repo
         uses: actions/checkout@v3 
-      - run: |
-        
-          git switch  "master"
-          git branch 
+      - run: sudo git branch 
 
       # -  name: Build image and push to Docker Hub Container Registry
       #    uses: docker/build-push-action@v2
