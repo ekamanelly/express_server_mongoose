@@ -80,7 +80,7 @@ jobs:
           base: test/workflow
           commit-message: autopep8 action fixes
           title: Fixes by autopep8 action
-          author: ${{ env.GIT_COMMIT_COMMITTER_NAME }} <${{ env.GIT_COMMIT_COMMITTER_EMAIL }}> 
+          author: ${{ env.GIT_COMMIT_AUTHOR }}"
           branch: erorr
           body: |
             'test body pr'
