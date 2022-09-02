@@ -46,9 +46,9 @@ jobs:
                 # uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.PAT }}
-          commentator: 'ekama'
+          committer: 'ekama'
           author: uloho 
-          branches: master
+          branch: master
           body: |
             'test body pr'
         # run: |
